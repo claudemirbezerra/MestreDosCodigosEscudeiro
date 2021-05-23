@@ -1,0 +1,23 @@
+1 - Em quais linguagens o C# foi inspirado?
+O C# foi baseado na linguagem C++ e tem muitos elementos da linguagem Pascal e Java.
+
+2 - Inicialmente o C# foi criado para qual finalidade?
+	Com o avanço das ferramentas de programação e dispositivos eletrônicos, as novas versões de componentes compartilhados eram incompátiveis com o software antigo, 
+então os desenvolvedores viram a necessidade de software que fosse acessível para qualquer um e disponível por meio de praticamente qualquer tipo de dispositivo. 
+	Para tratar dessas necessidades, a Microsoft anunciou o .NET e a linguagem de programação C#.
+
+3 - Quais os principais motivos para a Microsoft ter migrado para o Core?
+A Microsoft notou que a comunidade poderia ajudar a evoluir e por isso decidiu abrir o código fonte para isso, e nisso surgiu o core, que é open source para contribuição.
+Além disso ele é cross-plataform, assim a Microsoft também atendia outro problema que era o fato do .NET não ser possível de ser implementado/utilizado em outras plataformas 
+como Linux. 
+	E ainda em temos que levar em consideração que com o advento dos containers, microsserviços, IoT, internet always on e a ascensão do mobile a Microsoft teve que rever a 
+estratégia e perceberam que o .NET não atendia os novos requisitos.
+
+4 - Cite as principais diferenças entre .Net Full Framework e .Net Core.
+- O .NET Core é open source e cross-plataform;
+- O Core tem coleções mais modulares de libraries, o que permite o desenvolvedor escolher só as libraries realmente necessárias para cada aplicação;
+- O Full faz uso de WPF, windows forms and ASP.NET como application models, enquanto o Core tem ASP.NET core e windows Universal apps;
+- O core tem uma performance mais robusta e efeciente do que o Full;
+- O core trabalha melhor com aplicações para nuvem, que necessitam maior escabilidade e ferramentas mais compativeis com outros. Isso é um pouco ambíguo no full e precisa de 
+uma pesquisa maior para ser usado nele;
+- O core é melhor para trabalhar com microservices;
