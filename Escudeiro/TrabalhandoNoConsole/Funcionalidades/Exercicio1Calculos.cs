@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TrabalhandoNoConsole.Compartilhado;
 
 namespace TrabalhandoNoConsole.Funcionalidades
@@ -11,11 +12,8 @@ namespace TrabalhandoNoConsole.Funcionalidades
             var segundoValor = ReceberValorParaCalculo(MensagensGerais.MsgInserirSegundoValorCalculo);
 
             RealizarCalculos(primeiroValor, segundoValor);
-
-            Console.WriteLine(MensagensGerais.MsgExecutarOutroExercicio);
-
-            var continuarPrograma = Console.ReadLine();
-            return continuarPrograma == MensagensGerais.ConstanteResultadoSim;
+                        
+            return ValidadorProximoPassoFluxo.ValidarSeUsuarioContinuaraPrograma();
         }
 
         private static decimal ReceberValorParaCalculo(string mensagem)
@@ -64,7 +62,12 @@ namespace TrabalhandoNoConsole.Funcionalidades
                     MensagensGerais.MsgValorParOuImpar, MensagensGerais.EspacoLinha, segundoValor.ToString(), RetornarSeValorImparOuPar(segundoValor)
                 );
 
-            Console.WriteLine(resultado);
+            var mensagensResultado = new List<string> {
+                MensagensGerais.MsgResultadoCabecalho,
+                resultado
+            };
+
+            ImpressorDeResultado.Imprimir(mensagensResultado);
         }
 
         private static string RetornarResultadoMensagem(decimal valor, string complementoMensagem)

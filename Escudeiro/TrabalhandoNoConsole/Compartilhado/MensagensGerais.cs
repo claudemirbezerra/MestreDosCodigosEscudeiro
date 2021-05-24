@@ -31,14 +31,15 @@
         public const string MsgInformeNomeESalario = "\nInfome o nome e salário do funcionário, separados por uma barra(/) ";
         public const string MsgQuantidadeInvalida = "\nQuantidade de funcionárias inválida, preencha com um valor inteiro maior que zero";
         public const string MsgSalarioInvalidoCalculo = "\nSalário inválido, escreva em qualquer formato decimal válido.";
-        public const string MsgMenorSalario = "\nO menor salário pertence a(o) funcionária(o) {0}, com o valor de {1}.";
-        public const string MsgMaiorSalario = "O maior salário pertence a(o) funcionária(o) {0}, com o valor de {1}.";
+        public const string MsgMenorSalario = "{0} possuí o menor salário, com o valor de {1}.";
+        public const string MsgMaiorSalario = "{0} possuí o maior salário, com o valor de {1}.";
 
         #endregion
 
         #region MensagensGerais
 
-        public const string MsgExecutarOutroExercicio = "Deseja executar algum outro exercício? (s/n)";
+        public const string MsgExecutarOutroExercicio = "\nDeseja executar algum outro exercício? (s/n)";
+        public const string MsgResultadoCabecalho = "\n################ RESULTADO ################";
 
 
         public static string FormatarMensagem(string valor1, string valor2)
