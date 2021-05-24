@@ -1,25 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TrabalhandoNoConsole.Compartilhado;
 
 namespace TrabalhandoNoConsole.Funcionalidades
 {
     public static class Exercicio1Calculos
     {
-        public static Boolean SolicitarPreenchementoDeValoresParaOUsuario()
+        public static bool SolicitarPreenchementoDeValoresParaOUsuario()
         {
-            var primeiroValor = ReceberValorParaCalculo("\nInsira o primeiro valor para os cálculos(para decimais utiliza a vírgula): ");
-            var segundoValor = ReceberValorParaCalculo("\nInsira o segundo valor para os cálculos(para decimais utiliza a vírgula): ");
+            var primeiroValor = ReceberValorParaCalculo(MensagensGerais.MsgInserirPrimeiroValorCalculo);
+            var segundoValor = ReceberValorParaCalculo(MensagensGerais.MsgInserirSegundoValorCalculo);
 
             RealizarCalculos(primeiroValor, segundoValor);
 
-            Console.WriteLine("Deseja executar algum outro exercício? (s/n)");
-            var continuarPrograma = Console.ReadLine();
-            var continuarProgramaBoolean = continuarPrograma == "s";
+            Console.WriteLine(MensagensGerais.MsgExecutarOutroExercicio);
 
-            return continuarProgramaBoolean;
+            var continuarPrograma = Console.ReadLine();
+            return continuarPrograma == MensagensGerais.ConstanteResultadoSim;
+        }
+
+        private static decimal ReceberValorParaCalculo(string mensagem)
+        {
+            Console.WriteLine(mensagem);
+            var valorString = Console.ReadLine();
+            var valorFormatado = valorString.Replace(MensagensGerais.ConstantePonto, MensagensGerais.ConstanteVirgula);
+            decimal valorDecimal;
+
+            if (decimal.TryParse(valorFormatado, out valorDecimal))
+                return valorDecimal;
+
+            Console.WriteLine(MensagensGerais.MsgNumeroInvalidoCalculo);
+            valorDecimal = ReceberValorParaCalculo(mensagem);
+            return valorDecimal;
+        }
+
+        private static string RetornarSeValorImparOuPar(decimal valor)
+        {
+            var resultado = MensagensGerais.ConstantePar;
+
+            if ((valor % 2) != 0)
+                resultado = MensagensGerais.ConstanteImpar;
+
+            return resultado;
         }
 
         private static void RealizarCalculos(decimal primeiroValor, decimal segundoValor)
@@ -29,49 +50,29 @@ namespace TrabalhandoNoConsole.Funcionalidades
             var valorDividido = primeiroValor / segundoValor;
             var valorMultiplicado = primeiroValor * segundoValor;
 
-            var resultado = RetornarResultadoMensagem(valorSomado, "somados");
-            resultado += RetornarResultadoMensagem(valorSubtraido, "subtraídos");
-            resultado += RetornarResultadoMensagem(valorDividido, "divididos");
-            resultado += RetornarResultadoMensagem(valorMultiplicado, "multiplicados");
+            var resultado = RetornarResultadoMensagem(valorSomado, MensagensGerais.ConstanteSomados);
+            resultado += RetornarResultadoMensagem(valorSubtraido, MensagensGerais.ConstanteSubtraidos);
+            resultado += RetornarResultadoMensagem(valorDividido, MensagensGerais.ConstanteDivididos);
+            resultado += RetornarResultadoMensagem(valorMultiplicado, MensagensGerais.ConstanteMultiplicados);
 
-            resultado += "\n" + primeiroValor + " - " + RetornarSeValorImparOuPar(primeiroValor);
-            resultado += "\n" + segundoValor + " - " + RetornarSeValorImparOuPar(segundoValor);
+            resultado +=
+                MensagensGerais.FormatarMensagem(
+                    MensagensGerais.MsgValorParOuImpar, MensagensGerais.EspacoLinha, primeiroValor.ToString(), RetornarSeValorImparOuPar(primeiroValor)
+                );
+            resultado +=
+                MensagensGerais.FormatarMensagem(
+                    MensagensGerais.MsgValorParOuImpar, MensagensGerais.EspacoLinha, segundoValor.ToString(), RetornarSeValorImparOuPar(segundoValor)
+                );
 
             Console.WriteLine(resultado);
         }
 
-        private static string RetornarSeValorImparOuPar(decimal valor)
-        {
-            var resultado = "Par";
-
-            if ((valor % 2) != 0)
-            {
-                resultado = "Ímpar";
-            }
-
-            return resultado;
-        }
-
         private static string RetornarResultadoMensagem(decimal valor, string complementoMensagem)
         {
-            var mensagem = "\nResultado dos valores " + complementoMensagem + " é igual a " + valor;
+            var mensagem = MensagensGerais.FormatarMensagem(
+                    MensagensGerais.MsgResultadoValoresCalculo, MensagensGerais.EspacoLinha, complementoMensagem, valor.ToString()
+                );
             return mensagem;
-        }
-
-        private static decimal ReceberValorParaCalculo(string mensagem)
-        {
-            Console.WriteLine(mensagem);
-            var valorString = Console.ReadLine();
-            decimal valorDecimal;
-
-            if (decimal.TryParse(valorString, out valorDecimal))
-            {
-                return valorDecimal;
-            }
-
-            Console.WriteLine("\nNúmero inválido, escreva em qualquer formato decimal válido.");
-            valorDecimal = ReceberValorParaCalculo(mensagem);
-            return valorDecimal;
         }
     }
 }

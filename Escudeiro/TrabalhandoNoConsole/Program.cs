@@ -36,6 +36,9 @@ namespace TrabalhandoNoConsole
                 case "1":
                     continuarPrograma = Exercicio1Calculos.SolicitarPreenchementoDeValoresParaOUsuario();
                     break;
+                case "2":
+                    continuarPrograma = Exercicio2Salarios.SolicitarPreenchementoDeValoresParaOUsuario();
+                    break;
                 default:
                     Console.WriteLine("\nOpção inválida, entre com um número válido: ");
                     SelecionarExercicio(false);
@@ -47,10 +50,6 @@ namespace TrabalhandoNoConsole
                 Console.WriteLine("\n\n");
                 SelecionarExercicio();
             }
-        }
-
-        private static void SelecionarOpcoesDoExercicio2()
-        {
         }
 
         private static void SelecionarOpcoesDoExercicio3()
