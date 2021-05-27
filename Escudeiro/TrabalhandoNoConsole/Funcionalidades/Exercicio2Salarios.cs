@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TrabalhandoNoConsole.Compartilhado;
 using TrabalhandoNoConsole.Funcionalidades.Objetos;
 
@@ -22,8 +23,7 @@ namespace TrabalhandoNoConsole.Funcionalidades
 
             RecuperarMaiorEMenorSalario(quantidadeDeFuncionariosInt);
 
-            var continuarPrograma = Console.ReadLine();
-            return continuarPrograma == MensagensGerais.ConstanteResultadoSim;
+            return ValidadorProximoPassoFluxo.ValidarSeUsuarioContinuaraPrograma();
         }
 
         private static void RecuperarMaiorEMenorSalario(int quantidadeFuncionarios)
@@ -36,13 +36,14 @@ namespace TrabalhandoNoConsole.Funcionalidades
                 RecuperarFuncionariosESalarios(menorSalario, maiorSalario);
             }
 
-            Console.WriteLine(MensagensGerais.FormatarMensagem(
-                MensagensGerais.MsgMenorSalario, menorSalario.Nome, menorSalario.Salario.ToString()
-            ));
+            var mensagensResultado = new List<string>
+            {
+                MensagensGerais.MsgResultadoCabecalho,
+                MensagensGerais.FormatarMensagem(MensagensGerais.MsgMenorSalario, menorSalario.Nome, menorSalario.Salario.ToString()),
+                MensagensGerais.FormatarMensagem(MensagensGerais.MsgMaiorSalario, maiorSalario.Nome, maiorSalario.Salario.ToString())
+            };
 
-            Console.WriteLine(MensagensGerais.FormatarMensagem(
-                MensagensGerais.MsgMaiorSalario, maiorSalario.Nome, maiorSalario.Salario.ToString()
-            ));
+            ImpressorDeResultado.Imprimir(mensagensResultado);
         }
 
         private static void RecuperarFuncionariosESalarios(FuncionarioSalario menorSalario, FuncionarioSalario maiorSalario)
