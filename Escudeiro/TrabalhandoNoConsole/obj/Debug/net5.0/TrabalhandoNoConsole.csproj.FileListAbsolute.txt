@@ -5,7 +5,6 @@ D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\bin\Debug\net5.0\Tra
 D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\bin\Debug\net5.0\TrabalhandoNoConsole.dll
 D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\bin\Debug\net5.0\ref\TrabalhandoNoConsole.dll
 D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\bin\Debug\net5.0\TrabalhandoNoConsole.pdb
-D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\obj\Debug\net5.0\TrabalhandoNoConsole.csprojAssemblyReference.cache
 D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\obj\Debug\net5.0\TrabalhandoNoConsole.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\obj\Debug\net5.0\TrabalhandoNoConsole.AssemblyInfoInputs.cache
 D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\obj\Debug\net5.0\TrabalhandoNoConsole.AssemblyInfo.cs
@@ -30,3 +29,4 @@ C:\Projetos\MestreDosCodigosEscudeiro\Escudeiro\TrabalhandoNoConsole\obj\Debug\n
 C:\Projetos\MestreDosCodigosEscudeiro\Escudeiro\TrabalhandoNoConsole\obj\Debug\net5.0\ref\TrabalhandoNoConsole.dll
 C:\Projetos\MestreDosCodigosEscudeiro\Escudeiro\TrabalhandoNoConsole\obj\Debug\net5.0\TrabalhandoNoConsole.pdb
 C:\Projetos\MestreDosCodigosEscudeiro\Escudeiro\TrabalhandoNoConsole\obj\Debug\net5.0\TrabalhandoNoConsole.genruntimeconfig.cache
+D:\Projetos\MestreDosCodigos\Escudeiro\TrabalhandoNoConsole\obj\Debug\net5.0\TrabalhandoNoConsole.csprojAssemblyReference.cache
