@@ -11,7 +11,9 @@ namespace TrabalhandoNoConsole.Funcionalidades
 
         public static bool SolicitarPreenchementoDeValoresParaOUsuario()
         {
+            finalizarPreenchimentoAlunos = false;
             var alunos = SolicitarPreenchimentoDeAlunos();
+
             ImprimirAlunosAprovados(alunos);
 
             return ValidadorProximoPassoFluxo.ValidarSeUsuarioContinuaraPrograma();
@@ -88,6 +90,7 @@ namespace TrabalhandoNoConsole.Funcionalidades
         private static void ImprimirAlunosAprovados(List<Aluno> alunos)
         {
             Console.WriteLine(MensagensGerais.MsgResultadoCabecalho);
+
             Console.WriteLine(MensagensGerais.MsgNotasAcimaDe7);
             alunos.ForEach(aluno =>
             {

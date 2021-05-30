@@ -7,6 +7,8 @@ namespace TrabalhandoNoConsole.Compartilhado
     {
         public static void Imprimir(List<string> mensagens)
         {
+            Console.WriteLine(MensagensGerais.MsgResultadoCabecalho);
+
             mensagens.ForEach(mensagem =>
             {
                 Console.WriteLine(mensagem);

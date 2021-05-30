@@ -11,8 +11,9 @@ namespace TrabalhandoNoConsole.Funcionalidades
             var primeiroValor = ReceberValorParaCalculo(MensagensGerais.MsgInserirPrimeiroValorCalculo);
             var segundoValor = ReceberValorParaCalculo(MensagensGerais.MsgInserirSegundoValorCalculo);
 
-            RealizarCalculos(primeiroValor, segundoValor);
-                        
+            var mensagensResultado = RealizarCalculos(primeiroValor, segundoValor);
+            ImpressorDeResultado.Imprimir(mensagensResultado);
+
             return ValidadorProximoPassoFluxo.ValidarSeUsuarioContinuaraPrograma();
         }
 
@@ -41,7 +42,7 @@ namespace TrabalhandoNoConsole.Funcionalidades
             return resultado;
         }
 
-        private static void RealizarCalculos(decimal primeiroValor, decimal segundoValor)
+        private static List<string> RealizarCalculos(decimal primeiroValor, decimal segundoValor)
         {
             var valorSomado = primeiroValor + segundoValor;
             var valorSubtraido = primeiroValor - segundoValor;
@@ -63,11 +64,10 @@ namespace TrabalhandoNoConsole.Funcionalidades
                 );
 
             var mensagensResultado = new List<string> {
-                MensagensGerais.MsgResultadoCabecalho,
                 resultado
             };
 
-            ImpressorDeResultado.Imprimir(mensagensResultado);
+            return mensagensResultado;
         }
 
         private static string RetornarResultadoMensagem(decimal valor, string complementoMensagem)

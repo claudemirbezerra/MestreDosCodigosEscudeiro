@@ -38,13 +38,22 @@
 
         #region Mensagens para o quarto exercício
 
-        public const string MsgNotaInvalida = "\nNota inválido, escreva em qualquer formato decimal válido.";
+        public const string MsgNotaInvalida = "\nNota inválida, escreva em qualquer formato decimal válido.";
         public const string MsgNomeAluno = "\nInforme o nome do aluno {0}: ";
         public const string MsgNotaAluno = "Informe a nota {0} do aluno {1}:";
         public const string MsgNotasAcimaDe7 = "Alunos com média acima de 7: ";
         public const string MsgAlunoMedia = "{0} - Média: {1}";
         public const string MsgFinalizarNotas = "\nA seguir serão pedidas as notas, digite /fimN para finalizar o preenchimento das notas " +
             "ou /fimA para finalizar o preenchimento dos alunos: ";
+
+        #endregion
+
+        #region Mensagens para o quinto exercício
+
+        public const string MsgValorBhaskara = "Informe o valor {0}:";
+        public const string MsgValorInvalido = "\nValor inválido, escreva em qualquer formato decimal válido.";
+        public const string MsgResultadoR1 = "\nR1 = {0}";
+        public const string MsgResultadoR2 = "\nR2 = {0}";
 
         #endregion
 

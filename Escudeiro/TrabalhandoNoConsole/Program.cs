@@ -49,6 +49,9 @@ namespace TrabalhandoNoConsole
                 case "4":
                     continuarPrograma = Exercicio4AlunosAprovados.SolicitarPreenchementoDeValoresParaOUsuario();
                     break;
+                case "5":
+                    continuarPrograma = Exercicio5Bhaskara.SolicitarPreenchementoDeValoresParaOUsuario();
+                    break;
                 case "0":
                     continuarPrograma = false;
                     break;
@@ -63,10 +66,6 @@ namespace TrabalhandoNoConsole
                 Console.WriteLine("\n");
                 SelecionarExercicio();
             }
-        }
-
-        private static void SelecionarOpcoesDoExercicio5()
-        {
         }
 
         private static void SelecionarOpcoesDoExercicio6()

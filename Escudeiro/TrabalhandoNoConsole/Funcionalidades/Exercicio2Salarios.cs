@@ -10,7 +10,6 @@ namespace TrabalhandoNoConsole.Funcionalidades
         public static bool SolicitarPreenchementoDeValoresParaOUsuario()
         {
             int quantidadeDeFuncionariosInt = 0;
-
             while (quantidadeDeFuncionariosInt <= 0)
             {
                 Console.WriteLine(MensagensGerais.MsgInformandoComoFuncionaALeituraDeSalarios);
@@ -21,12 +20,13 @@ namespace TrabalhandoNoConsole.Funcionalidades
                     Console.WriteLine(MensagensGerais.MsgQuantidadeInvalida);
             }
 
-            RecuperarMaiorEMenorSalario(quantidadeDeFuncionariosInt);
+            var mensagensResultado = RecuperarMaiorEMenorSalario(quantidadeDeFuncionariosInt);
+            ImpressorDeResultado.Imprimir(mensagensResultado);
 
             return ValidadorProximoPassoFluxo.ValidarSeUsuarioContinuaraPrograma();
         }
 
-        private static void RecuperarMaiorEMenorSalario(int quantidadeFuncionarios)
+        private static List<string> RecuperarMaiorEMenorSalario(int quantidadeFuncionarios)
         {
             var menorSalario = new FuncionarioSalario();
             var maiorSalario = new FuncionarioSalario();
@@ -43,7 +43,7 @@ namespace TrabalhandoNoConsole.Funcionalidades
                 MensagensGerais.FormatarMensagem(MensagensGerais.MsgMaiorSalario, maiorSalario.Nome, maiorSalario.Salario.ToString())
             };
 
-            ImpressorDeResultado.Imprimir(mensagensResultado);
+            return mensagensResultado;
         }
 
         private static void RecuperarFuncionariosESalarios(FuncionarioSalario menorSalario, FuncionarioSalario maiorSalario)
